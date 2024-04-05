@@ -17,7 +17,12 @@ func (q *queue[T]) Push(value T) {
 }
 
 func (q *queue[T]) Pop() T {
-	ans := q.lst.Remove(q.lst.Front())
+	var value T
+	front := q.lst.Front()
+	if front == nil {
+		return value
+	}
+	ans := q.lst.Remove(front)
 	return (ans).(T)
 }
 
