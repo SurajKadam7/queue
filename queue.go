@@ -20,3 +20,7 @@ func (q *queue[T]) Pop() T {
 	ans := q.lst.Remove(q.lst.Front())
 	return (ans).(T)
 }
+
+func (q *queue[T]) Len() int {
+	return q.lst.Len()
+}
